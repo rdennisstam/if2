@@ -8,7 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="50" inline="false">
-        <mutation else="1"></mutation>
+        <mutation elseif="1" else="1"></mutation>
         <value name="IF0">
           <block type="logic_compare" id="135" inline="true">
             <field name="OP">LT</field>
@@ -27,6 +27,24 @@
         <statement name="DO0">
           <block type="movement_right" id="108"></block>
         </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="224" inline="true">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="sensor_object" id="347">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="370">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_left" id="261"></block>
+        </statement>
         <statement name="ELSE">
           <block type="movement_forward" id="118"></block>
         </statement>
@@ -37,32 +55,6 @@
                 <field name="NUM">200</field>
               </block>
             </value>
-            <next>
-              <block type="controls_if" id="198" inline="false">
-                <mutation else="1"></mutation>
-                <value name="IF0">
-                  <block type="logic_compare" id="224" inline="true">
-                    <field name="OP">EQ</field>
-                    <value name="A">
-                      <block type="sensor_object" id="347">
-                        <field name="OBJECT">LEFTFRONT</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="370">
-                        <field name="NUM">75</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="movement_left" id="261"></block>
-                </statement>
-                <statement name="ELSE">
-                  <block type="movement_forward" id="280"></block>
-                </statement>
-              </block>
-            </next>
           </block>
         </next>
       </block>
