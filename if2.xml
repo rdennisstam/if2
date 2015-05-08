@@ -29,7 +29,7 @@
         </statement>
         <value name="IF1">
           <block type="logic_compare" id="224" inline="true">
-            <field name="OP">EQ</field>
+            <field name="OP">LT</field>
             <value name="A">
               <block type="sensor_object" id="347">
                 <field name="OBJECT">RIGHTFRONT</field>
@@ -43,10 +43,10 @@
           </block>
         </value>
         <statement name="DO1">
-          <block type="movement_left" id="261"></block>
+          <block type="movement_forward" id="118"></block>
         </statement>
         <statement name="ELSE">
-          <block type="movement_forward" id="118"></block>
+          <block type="movement_left" id="261"></block>
         </statement>
         <next>
           <block type="robot_delay" id="157" inline="true">
